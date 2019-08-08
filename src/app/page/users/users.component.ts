@@ -9,14 +9,24 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  title = 'Data Table';
+  title = 'Users';
   userList: User[];
   userSubscription: Subscription;
+  changeCounter: number = 0;
 
   constructor(
     private userService: UserService
   ) {
 
+  }
+
+  deleteUser(user: User, indexOfUser) {
+    this.userService.remove(user.id).forEach(
+      x => {
+        this.userList.splice(indexOfUser, 1);
+        this.changeCounter++
+      }
+    );
   }
 
   ngOnInit() {

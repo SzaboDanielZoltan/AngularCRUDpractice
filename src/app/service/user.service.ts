@@ -17,4 +17,16 @@ export class UserService {
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.jsonUrl);
   }
+
+  add(user: User): Observable<User> {
+    return this.http.post<User>(this.jsonUrl, user);
+  }
+
+  edit(user: User): Observable<User> {
+    return this.http.put<User>(`${this.jsonUrl}/${user.id}`, user);
+  }
+
+  remove(id: number): Observable<User> {
+    return this.http.delete<User>(`${this.jsonUrl}/${id}`);
+  }
 }

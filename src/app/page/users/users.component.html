@@ -16,17 +16,26 @@
             <th>Age</th>
             <th>Email</th>
             <th>Phone</th>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
-          <tr *ngFor="let user of userList">
+          <tr *ngFor="let user of userList; index as i;">
             <td>{{ user.id }}</td>
             <td>{{ user.name.last }} {{ user.name.first }}</td>
             <td>{{ user.isActive }}</td>
             <td>{{ user.age }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.phone }}</td>
+            <td>
+              <div class="btn-group"
+                   role="group">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger"
+                        (click)="deleteUser(user, i)">Remove</button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
