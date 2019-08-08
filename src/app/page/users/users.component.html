@@ -31,7 +31,8 @@
             <td>
               <div class="btn-group"
                    role="group">
-                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-warning"
+                        routerLink="/users/{{ user.id }}">Edit</button>
                 <button class="btn btn-danger"
                         (click)="deleteUser(user, i)">Remove</button>
               </div>

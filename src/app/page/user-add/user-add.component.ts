@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-user-add',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAddComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+
+  constructor(private ar: ActivatedRoute, private us: UserService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+
   }
 
 }
