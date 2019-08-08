@@ -3,7 +3,7 @@
     {
       "id": 1,
       "guid": "99d82648-a621-4272-bb03-9dfae4ce570f",
-      "isActive": false,
+      "isActive": true,
       "balance": "$1,442.75",
       "picture": "http://placehold.it/32x32",
       "age": 25,
@@ -5319,6 +5319,17 @@
       ],
       "greeting": "Hello, Kari! You have 6 unread messages.",
       "favoriteFruit": "strawberry"
+    },
+    {
+      "id": 96,
+      "name": {
+        "first": "Dániel",
+        "last": "Szabó"
+      },
+      "isActive": true,
+      "age": "29",
+      "email": "zsdanee@gmail.com",
+      "phone": "+1 (887) 447-2811"
     }
   ]
 }

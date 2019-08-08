@@ -26,6 +26,10 @@ const appRoutes: Routes = [
     component: UserEditComponent
   },
   {
+    path: "addnewuser",
+    component: UserAddComponent
+  },
+  {
     path: "about",
     component: AboutComponent
   },
