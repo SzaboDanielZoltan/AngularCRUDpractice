@@ -4,22 +4,50 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IndexComponent } from './page/index/index.component';
+import { UsersComponent } from './page/users/users.component';
+import { UserEditComponent } from './page/user-edit/user-edit.component';
+import { UserAddComponent } from './page/user-add/user-add.component';
+import { AboutComponent } from './page/about/about.component';
 
 const appRoutes: Routes = [
-
+  {
+    path: "",
+    component: IndexComponent
+  },
+  {
+    path: "users",
+    component: UsersComponent
+  },
+  {
+    path: "users/:id",
+    component: UserEditComponent
+  },
+  {
+    path: "about",
+    component: AboutComponent
+  },
+  {
+    path: "**",
+    component: IndexComponent
+  }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    IndexComponent,
+    UsersComponent,
+    UserEditComponent,
+    UserAddComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
-    )
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
