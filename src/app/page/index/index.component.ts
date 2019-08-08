@@ -22,9 +22,11 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     this.userSubscription = this.userService.getAll().subscribe(
       users => {
-        users.forEach(user => user.isActive === true ? this.activeUsers++ : this.inactiveUsers++);
-        users.forEach(user => this.totalBalance += parseFloat(user.balance.replace("$", "").replace(",", "")));
-        users.forEach(user => user.favoriteFruit === "apple" ? this.appleUsers++ : this.appleUsers);
+        users.forEach(user => {
+          user.isActive === true ? this.activeUsers++ : this.inactiveUsers++;
+          this.totalBalance += parseFloat(user.balance.replace("$", "").replace(",", ""));
+          user.favoriteFruit === "apple" ? this.appleUsers++ : this.appleUsers;
+        })
       }
     );
   }

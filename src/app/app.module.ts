@@ -11,6 +11,7 @@ import { UsersComponent } from './page/users/users.component';
 import { UserEditComponent } from './page/user-edit/user-edit.component';
 import { UserAddComponent } from './page/user-add/user-add.component';
 import { AboutComponent } from './page/about/about.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 const appRoutes: Routes = [
   {
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     UsersComponent,
     UserEditComponent,
     UserAddComponent,
-    AboutComponent
+    AboutComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

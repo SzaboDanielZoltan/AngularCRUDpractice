@@ -1,8 +1,22 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-10 offset-1">
+    <div class="col-5 offset-1">
       <h1>{{ title }}</h1>
-      <router-outlet></router-outlet>
+    </div>
+    <div class="col-3">
+      <input [(ngModel)]="filterPhrase"
+             type="text"
+             class="form-control">
+    </div>
+    <div class="col-2">
+      <select class="form-control"
+              [(ngModel)]="filterProp">
+        <option value="name">By Name</option>
+        <option value="email">By Email</option>
+        <option value="phone">By Phone</option>
+        <option value="id">By ID</option>
+        <option value="age">By Age</option>
+      </select>
     </div>
   </div>
   <div class="row">
@@ -22,7 +36,7 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let user of userList; index as i;">
+          <tr *ngFor="let user of userList | filter:filterPhrase:filterProp; index as i;">
             <td>{{ user.id }}</td>
             <td>{{ user.name.last }} {{ user.name.first }}</td>
             <td>{{ user.isActive }}</td>

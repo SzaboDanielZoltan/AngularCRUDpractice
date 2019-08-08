@@ -13,6 +13,8 @@ export class UsersComponent implements OnInit {
   userList: User[];
   userSubscription: Subscription;
   changeCounter: number = 0;
+  filterPhrase: string = '';
+  filterProp: string = 'name';
 
   constructor(
     private userService: UserService
