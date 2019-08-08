@@ -5323,13 +5323,15 @@
     {
       "id": 96,
       "name": {
-        "first": "Dániel",
-        "last": "Szabó"
+        "first": "Deniel",
+        "last": "Taylor"
       },
       "isActive": true,
       "age": "29",
-      "email": "zsdanee@gmail.com",
-      "phone": "+1 (887) 447-2811"
+      "email": "asdasd@gmail.com",
+      "phone": "+1 (887) 447-1111",
+      "balance": "0",
+      "favoriteFruit": ""
     }
   ]
 }

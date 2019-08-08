@@ -21,12 +21,14 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(user: User, indexOfUser) {
-    this.userService.remove(user.id).forEach(
-      x => {
-        this.userList.splice(indexOfUser, 1);
-        this.changeCounter++
-      }
-    );
+    if (confirm(`Are you sure you want to delete ${user.name.first} ${user.name.last}?`)) {
+      this.userService.remove(user.id).forEach(
+        x => {
+          this.userList.splice(indexOfUser, 1);
+          this.changeCounter++
+        }
+      );
+    }
   }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 export class User {
   id: number = 0;
-  name: {first: string, last: string} = {
+  name: { first: string, last: string } = {
     first: '',
     last: ''
   }
@@ -8,4 +8,6 @@ export class User {
   age: number = 18;
   email: string = '';
   phone: string = '';
+  balance: string = '0';
+  favoriteFruit: string = '';
 }

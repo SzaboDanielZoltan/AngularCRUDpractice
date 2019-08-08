@@ -1,1 +1,44 @@
-<p>index works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Active users:</h5>
+        </div>
+        <div class="card-footer">
+          {{ activeUsers }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Inactive users:</h5>
+        </div>
+        <div class="card-footer">
+          {{ inactiveUsers }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total balance:</h5>
+        </div>
+        <div class="card-footer">
+          {{ totalBalance }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Users who likes apples:</h5>
+        </div>
+        <div class="card-footer">
+          {{ appleUsers }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
