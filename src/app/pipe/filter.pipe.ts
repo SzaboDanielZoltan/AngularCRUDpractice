@@ -6,7 +6,7 @@ import { User } from '../model/user';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(array: User[], filter: string, prop: string = 'name'): any {
+  transform(array: User[], filter: string = '', prop: string = 'name'): any {
     if (prop === "name") {
       return array.filter(user =>
         (user[prop].first.toLowerCase().indexOf(filter.toLowerCase()) > -1)

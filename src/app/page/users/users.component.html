@@ -24,19 +24,20 @@
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Active</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th (click)="setSorterKey('id')">#</th>
+            <th (click)="setSorterKey('name')">Name</th>
+            <th (click)="setSorterKey('isActive')">Active</th>
+            <th (click)="setSorterKey('age')">Age</th>
+            <th (click)="setSorterKey('email')">Email</th>
+            <th (click)="setSorterKey('phone')">Phone</th>
             <th><button class="btn btn-primary"
                       routerLink="/addnewuser">Add new user</button></th>
           </tr>
         </thead>
 
         <tbody>
-          <tr *ngFor="let user of userList | filter:filterPhrase:filterProp; index as i;">
+          <tr
+              *ngFor="let user of userList | filter:filterPhrase:filterProp:changeCounter | sort:orderKey:orderDirection:changeCounter">
             <td>{{ user.id }}</td>
             <td>{{ user.name.last }} {{ user.name.first }}</td>
             <td>{{ user.isActive }}</td>

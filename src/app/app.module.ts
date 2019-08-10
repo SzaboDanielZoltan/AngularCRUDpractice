@@ -12,6 +12,7 @@ import { UserEditComponent } from './page/user-edit/user-edit.component';
 import { UserAddComponent } from './page/user-add/user-add.component';
 import { AboutComponent } from './page/about/about.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { SortPipe } from './pipe/sort.pipe';
 
 const appRoutes: Routes = [
   {
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     UserEditComponent,
     UserAddComponent,
     AboutComponent,
-    FilterPipe
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

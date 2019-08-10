@@ -15,6 +15,8 @@ export class UsersComponent implements OnInit {
   changeCounter: number = 0;
   filterPhrase: string = '';
   filterProp: string = 'name';
+  orderDirection: number = 1;
+  orderKey: string = 'id';
 
   constructor(
     private userService: UserService
@@ -22,15 +24,26 @@ export class UsersComponent implements OnInit {
 
   }
 
-  deleteUser(user: User, indexOfUser) {
+  deleteUser(user: User) {
     if (confirm(`Are you sure you want to delete ${user.name.first} ${user.name.last}?`)) {
       this.userService.remove(user.id).forEach(
         x => {
-          this.userList.splice(indexOfUser, 1);
+          let index = this.userList.indexOf(user);
+          this.userList.splice(index, 1);
           this.changeCounter++
         }
       );
     }
+  }
+
+  setSorterKey(key: string): void {
+    if (key === this.orderKey) {
+      this.orderDirection = this.orderDirection === -1 ? 1 : -1;
+    } else {
+      this.orderDirection = 1;
+    }
+
+    this.orderKey = key;
   }
 
   ngOnInit() {
