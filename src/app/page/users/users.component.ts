@@ -42,8 +42,14 @@ export class UsersComponent implements OnInit {
     } else {
       this.orderDirection = 1;
     }
-
     this.orderKey = key;
+    Array.from(document.querySelectorAll('table thead th.title')).forEach(
+      el => el.children[0] !== undefined ? el.removeChild(el.children[0]) : el);
+    if (this.orderDirection === 1) {
+      document.querySelector(`.${key}`).innerHTML += '<i class="fa fa-sort-asc" aria-hidden="true"></i>';
+    } else {
+      document.querySelector(`.${key}`).innerHTML += '<i class="fa fa-sort-desc" aria-hidden="true"></i>';
+    }
   }
 
   ngOnInit() {
